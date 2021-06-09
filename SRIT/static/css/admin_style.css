@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Raleway',sans-serif;
+
+}
+p,a{
+    font-family: 'Roboto',sans-serif;
+}
+
+img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container
+{
+    max-width: 1330px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.clear
+{
+    clear: both;
+}
+
+section#sidebar{
+    width: 20%;
+    background-image: linear-gradient(rgba(121, 93, 187, 0.9),#05bbaa 150%),url('side_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #795dbb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #fff;
+    height: 100%;
+}
+
+.sidebar-brand{
+    padding: 50px 40px ;
+}
+
+.sidebar-menu ul li a{
+    display: block;
+    color: #fff;
+    padding: 10px 40px;
+}
+
+
+.sidebar-menu{
+  margin-top: 50px;  
+}
+.sidebar-menu li:hover{
+    background-color: rgba(0, 0, 0, 0.39);
+}
+
+.sidebar-menu li{
+    transition: all 0.5s ease;
+}
+
+.sidebar-menu ul li  span{
+    padding: 10px;
+}
+
+section#main-content{
+    width: 80%;
+    float: right;
+}
+
+.main-header{
+    position: fixed;
+    background-color: white;
+    box-shadow: 10px 10px 20px #bbb;
+    width: 100%;
+}
+.header-left p{
+    color:#bbb
+}
+
+input.search-bar{
+    width:50% ;
+    border-radius: 20px;
+    padding: 8px 12px;
+    border: 2px solid #bbb;
+    transition: width 1s ease;
+}
+input.search-bar:focus{
+    outline: none;
+    border:2px solid #795dbbe6;
+    width:90%;
+}
+.header-left{
+    float:left;
+    width: 30%;
+    padding: 20px ;
+}
+.header-left img
+{
+    width: 13%;
+    float: left;
+    padding-right: 10px;
+}
+
+i.fa.fa-search{
+    background-color: #6c49be;
+    color: white;
+    width: 32px;
+    height: 32px;
+    
+    line-height:32px ;
+    text-align: center;
+    border-top-right-radius:20px 20px ;
+    border-bottom-right-radius:20px 20px ;
+    margin-left: -32px;
+}
+.hot-table{
+    width:100%;
+    float: left;
+    background-color: white;
+    box-shadow: 10px 10px 20px #bbb;
+}

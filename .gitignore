@@ -1,0 +1,6 @@
+.vscode
+authpage/__pycache__
+dashboard/__pycache__
+homepage/__pycache__
+SRIT/__pycache__
+static/admin
