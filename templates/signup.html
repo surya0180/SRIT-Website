@@ -17,7 +17,7 @@
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup">
-                <form action="{% url 'signup' %}" class="sign-in-form" method="POST">
+                <form action="{% url 'signup' %}" class="sign-in-form" onsubmit="return checkPass()" method="POST">
                     {% csrf_token %}
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
@@ -33,18 +33,24 @@
 
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="password" placeholder="Password" name="psw" />
+                        <input id="psw" type="password" placeholder="Password" name="psw" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Confirm Password" name="cpsw" />
+                        <input id="cpsw" type="password" placeholder="Confirm Password" name="cpsw" />
                     </div>
+                    <div class="shps" style="margin-top: 1em;">
+                        Show Password: <input type="checkbox" name="showpass" id="showpass" onclick="showPass()" style="height: 9px;">
+                    </div>
+                    <span id="res" style="margin-bottom: 1em; color:red;"></span> <br> <br>
                     <input type="submit" class="btn" value="sign up">
                     <!-- <p class="">Don't have an account <a href="#"></a></p> -->
+                    <p>If you have an account <a href="{% url 'login' %}">sign in here</a></p>
                 </form>
             </div>
         </div>
     </div>
+     <script src="{% static 'js/authentication.js' %}"></script>
 </body>
 
 </html>
