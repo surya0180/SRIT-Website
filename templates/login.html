@@ -27,10 +27,13 @@
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" name="password" />
+                        <input id="psw" type="password" placeholder="Password" name="password" />
+                    </div>
+                    <div class="shps" style="margin-top: 1em;">
+                        Show Password: <input type="checkbox" name="showpass" id="showpass" onclick="showPass()" style="height: 9px;">
                     </div>
                     <input type="submit" class="btn" value="Login">
-
+                    <p class="p"><a href="{% url 'signup' %}">click here</a>  to create account</p>
                     <div class="social-media">
 
                     </div>
@@ -40,6 +43,7 @@
         </div>
     </div>
     </div>
+    <script src="{% static 'js/authentication.js' %}"></script>
 </body>
 
 </html>
