@@ -33,7 +33,9 @@ img-responsive{
 {
     clear: both;
 }
-
+.active{
+    background-color: aqua;
+}
 section#sidebar{
     width: 20%;
     background-image: linear-gradient(rgba(121, 93, 187, 0.9),#05bbaa 150%),url('side_bg.png');
