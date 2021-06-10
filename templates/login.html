@@ -11,13 +11,23 @@
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <title>Registration</title>
+    <style>
+        .head {
+            margin-left: 40em;
+            margin-top: -11em;
+            position: absolute;
+        }
+        .head img {
+            width: 85%;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup">
-
+                <span class="head"><a href="{% url 'index' %}"><img src="{% static 'img/sritlogo.png' %}" alt="srit_logo"></a></span>
                 <form action="{% url 'login' %}" class="sign-in-form" method="POST">
                     {% csrf_token %}
                     <h2 class="title">Sign in</h2>
@@ -30,10 +40,11 @@
                         <input id="psw" type="password" placeholder="Password" name="password" />
                     </div>
                     <div class="shps" style="margin-top: 1em;">
-                        Show Password: <input type="checkbox" name="showpass" id="showpass" onclick="showPass()" style="height: 9px;">
+                        Show Password: <input type="checkbox" name="showpass" id="showpass" onclick="showPass()"
+                            style="height: 9px;">
                     </div>
                     <input type="submit" class="btn" value="Login">
-                    <p class="p"><a href="{% url 'signup' %}">click here</a>  to create account</p>
+                    <p class="p"><a href="{% url 'signup' %}">click here</a> to create account</p>
                     <div class="social-media" style="margin-top: 2em;color: red;">
                         {{error}}
                     </div>

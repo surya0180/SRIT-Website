@@ -11,12 +11,23 @@
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <title>Registration</title>
+    <style>
+        .head {
+            margin-left: 40em;
+            margin-top: -5.3em;
+            position: absolute;
+        }
+        .head img {
+            width: 85%;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup">
+                <span class="head"><a href="{% url 'index' %}"><img src="{% static 'img/sritlogo.png' %}" alt="srit_logo"></a></span>
                 <form action="{% url 'signup' %}" class="sign-in-form" onsubmit="return checkPass()" method="POST">
                     {% csrf_token %}
                     <h2 class="title">Sign up</h2>
