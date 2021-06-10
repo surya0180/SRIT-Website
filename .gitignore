@@ -1,6 +1,10 @@
 .vscode
 authpage/__pycache__
+authpage/migrations/__pycache__
 dashboard/__pycache__
+dashboard/migrations/__pycache__
 homepage/__pycache__
+homepage/migrations/__pycache__
 SRIT/__pycache__
 static/admin
+SRIT/password.py

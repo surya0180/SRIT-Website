@@ -1,36 +1,37 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/sritlogo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'img/sritlogo.png' %}" type="image/x-icon">
     <title>Admin panel</title>
     <script
     src="https://kit.fontawesome.com/64d58efce2.js"
     crossorigin="anonymous"
    ></script>
-    <link type="text/css" rel="stylesheet" href="admin_style.css"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/admin_style.css' %}"/>
 
 </head>
 <body>
  <section id="sidebar">
     <div class="sidebar-brand">
-        <img src="img/sritlogo.png" width="70" height="70">
+        <img src="{% static 'img/sritlogo.png' %}" width="70" height="70">
     </div>
     <div class="sidebar-menu">
         <ul>
-            <li><a href="dashboard.html"><span> Home</a></li>
-            <li><a href="marks.html"><span> Marks</a></li> 
+            <li><a href="{% url 'dashboard' %}"><span> Home</a></li>
+            <li><a href="{% url 'marks' %}"><span> Marks</a></li> 
              <li><a href=""><span> Progress</a>
                 <ul>
-                    <li><a href="subjectWise.html"><span> Subject Wise</a></li>
-            <li><a href="overall.html"><span> Overall</a></li>
+                    <li><a href="{% url 'subjectWise' %}"><span> Subject Wise</a></li>
+            <li><a href="{% url 'overall' %}"><span> Overall</a></li>
                 </ul>
 
              </li>
-            <li><a href="report.html"><span> Report</a></li>
-            <li><a href="suggestion.html"><span> Suggestions</a></li>    
+            <li><a href="{% url 'report' %}"><span> Report</a></li>
+            <li><a href="{% url 'suggestion' %}"><span> Suggestions</a></li>    
         </ul>
     </div>
  </section>
@@ -45,7 +46,7 @@
             <i class="fa fa-search"></i>
         </div>
         <div class="header-left">
-            <img src="img/user.png" class="img-responsive">
+            <img src="{% static 'img/user.png' %}" class="img-responsive">
             <h2>SRIT</h2>
             <p>Admin</p>
         </div>
