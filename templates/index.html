@@ -2,80 +2,88 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>srit-home</title>
-        <link rel="stylesheet" href="{% static 'css/home.css' %}">
-        <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Avanni">
 
-    <!-- ========== Page Title ========== -->
-    <title>SRIT </title>
+<head>
+  <title>srit-home</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Avanni">
 
-    <!-- ========== Favicon Icon ========== -->
-    <link rel="shortcut icon" href="{% static 'img/sritlogo.png' %}" type="image/x-icon">
+  <!-- ========== Page Title ========== -->
+  <title>SRIT </title>
 
-    <!-- ========== Start Stylesheet ========== -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/admin_style.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/107525cc11.js"></script>
-    </head>
-    <style type="text/css">
-        a:hover{
-            color: white;
-            text-decoration: none;
-        }
-    </style>
-    <body>
-        <nav>
-            <label class="logo">SRIT</label>
-            <ul>
-                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
-                <li><a href="{% url 'login' %}">Login</a></li>
-                
-            </ul><br/><br/>
-            </nav>
-            <marquee><h1>SRINIVASA RAMANUJAN INSTITUTE OF TECHNOLOGY</h1></marquee>
-            
+  <!-- ========== Favicon Icon ========== -->
+  <link rel="shortcut icon" href="{% static 'img/sritlogo.png' %}" type="image/x-icon">
 
-<section class="container pt-5">
-    <div id="demo" class="carousel slide" data-ride="carousel" data-interval="1700" data-pause=false>
+  <!-- ========== Start Stylesheet ========== -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/admin_style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://kit.fontawesome.com/107525cc11.js"></script>
+</head>
+<style type="text/css">
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  .slider .item {
+    height: 550px;
+  }
+  .slider .owl-dots {
+    top: 480px;
+  }
+</style>
 
-  <!-- Indicators -->
-          <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <!-- <li data-target="#demo" data-slide-to="1"></li> -->
-            <li data-target="#demo" data-slide-to="2"></li>
-          </ul>
-          
-          <!-- The slideshow -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="{% static 'img/sritslide1.jpg' %}" alt="Los Angeles">
-            </div>
-            <!-- <div class="carousel-item">
-              <img src="sritslide2.jpg" alt="Chicago" width="1100" height="500">
-            </div> -->
-            <div class="carousel-item">
-              <img src="{% static 'img/slide3.jpg' %}" alt="New York" width="1100" height="500">
+<body>
+  <nav>
+    <label class="logo">SRIT</label>
+    <ul>
+      <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+      <li><a href="{% url 'login' %}">Login</a></li>
+
+    </ul><br /><br />
+  </nav>
+  <marquee>
+    <h1><b>SRINIVASA RAMANUJAN INSTITUTE OF TECHNOLOGY<b></h1>
+  </marquee>
+
+
+  <section id="home" class="slider" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row">
+        <div class="owl-carousel owl-theme">
+          <div class="item item-first">
+            <div class="caption">
+              <div class="col-md-offset-1 col-md-10">
+              </div>
             </div>
           </div>
-          
-          <!-- Left and right controls -->
-          <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </a>
-          <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </a>
-    </div>
-</section>
-            
-                
 
-        
-    </body>
+          <div class="item item-second">
+            <div class="caption">
+              <div class="col-md-offset-1 col-md-10">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.sticky.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/wow.min.js' %}"></script>
+  <script src="{% static 'js/smoothscroll.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+
+
+</body>
