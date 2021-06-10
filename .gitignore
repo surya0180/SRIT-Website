@@ -8,3 +8,4 @@ homepage/migrations/__pycache__
 SRIT/__pycache__
 static/admin
 SRIT/password.py
+media/
