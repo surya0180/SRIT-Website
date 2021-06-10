@@ -11,6 +11,54 @@
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="{% static 'css/admin_style.css' %}" />
 
+    <style>
+        .collapsible {
+            background-color: #7b43ff;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: #5937a8;
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #95a6f0;
+        }
+
+        section .head {
+            margin-top: 1em;
+            margin-bottom: 2.5em;
+        }
+        .tail img {
+            padding: 2em;
+            margin-left: 7.5em;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -52,11 +100,50 @@
         </header>
     </section>
 
-    <section style="padding: 20em;padding-left: 40em;">
-        <img style="width: 600px; height: 400px;" src="../../media/sale_purchase_peichart.png" />
+    <section style="padding: 10em;padding-left: 30em;" class="tail">
+        <h2 class="head">Subject Wise Analysis of Perfomance: </h2>
+        <button class="collapsible"><b>Subject 1</b></button>
+        <div class="content">
+            <img style="width: 600px; height: 400px;" src="../../media/sale_purchase_peichart.png" />
+        </div>
+        <button class="collapsible"><b>Subject 2</b></button>
+        <div class="content">
+            <img style="width: 600px; height: 400px;" src="../../media/sale_purchase_peichart.png" />
+        </div>
+        <button class="collapsible"><b>Subject 3</b></button>
+        <div class="content">
+            <img style="width: 600px; height: 400px;" src="../../media/sale_purchase_peichart.png" />
+        </div>
+        <button class="collapsible"><b>Subject 4</b></button>
+        <div class="content">
+            <img style="width: 600px; height: 400px;" src="../../media/sale_purchase_peichart.png" />
+        </div>
+        <button class="collapsible"><b>Subject 5</b></button>
+        <div class="content">
+            <img style="width: 600px; height: 400px;" src="../../media/sale_purchase_peichart.png" />
+        </div>
+        <button class="collapsible"><b>Subject 6</b></button>
+        <div class="content">
+            <img style="width: 600px; height: 400px;" src="../../media/sale_purchase_peichart.png" />
+        </div>
     </section>
 
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
 
 </body>
 
