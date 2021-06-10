@@ -8,6 +8,9 @@ def dashboard(request):
 def marks(request):
     return render(request, 'marks.html')
 
+def activities(request):
+    return render(request, 'activities.html')
+
 def subjectWise(request):
     return render(request, 'subjectWise.html')
 

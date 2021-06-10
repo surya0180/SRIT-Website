@@ -54,6 +54,7 @@
             <ul>
                 <li><a href="{% url 'dashboard' %}"><span> Home</a></li>
                 <li><a href="{% url 'marks' %}"><span> Marks</a></li>
+                <li><a href="{% url 'activities' %}"><span> Activities</a></li>
                 <li><a href=""><span> Progress</a>
                     <ul>
                         <li><a href="{% url 'subjectWise' %}"><span> Subject Wise</a></li>
@@ -88,16 +89,16 @@
             {% csrf_token %}
             <table>
                 <tr>
-                    <td>
+                    <td style="background-color: #7b43ff; color:white;">
                         <b> SUBJECT </b>
                     </td>
-                    <td>
+                    <td style="background-color: #7b43ff;color:white;">
                         <b>MID 1</b>
                     </td>
-                    <td>
+                    <td style="background-color: #7b43ff;color:white;">
                         <b>MID 2</b>
                     </td>
-                    <td>
+                    <td style="background-color: #7b43ff;color:white;">
                         <b>EXTERNAL</b>
                     </td>
                 </tr>
@@ -106,11 +107,16 @@
                         Subject 1
                     </td>
                     <td>
-                        <input type="text" style="border:0px" name="sti" value="88">
+                        <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
+                            name="sti" value="24">
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
+                            name="sti" value="25">
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
+                            name="sti" value="-">
                     </td>
                 </tr>
                 <tr>
@@ -118,10 +124,16 @@
                         Subject 2
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
+                            value="25">
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
+                            value="22">
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
+                            value="-">
                     </td>
                 </tr>
                 <tr>
@@ -129,40 +141,68 @@
                         Subject 3
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
+                            name="sti" value="22">
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
+                            name="sti" value="21">
                     </td>
-                    <td></td>
+                    <td>
+                        <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
+                            name="sti" value="-">
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         Subject 4
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
+                            value="21">
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
+                            value="26">
                     </td>
-                    <td></td>
+                    <td>
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
+                            value="-">
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         Subject 5
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
+                            name="sti" value="26">
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
+                            name="sti" value="19">
                     </td>
-                    <td></td>
+                    <td>
+                        <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
+                            name="sti" value="-">
+                    </td>
                 </tr>
                 <tr>
                     <td>
                         Subject 6
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
+                            value="19">
                     </td>
                     <td>
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
+                            value="24">
                     </td>
-                    <td></td>
+                    <td>
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
+                            value="-">
+                    </td>
                 </tr>
             </table>
             <input type="submit" value="Predict" class="button">
