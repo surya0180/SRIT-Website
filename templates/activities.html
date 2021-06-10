@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/sritlogo.png' %}" type="image/x-icon">
+    <title>Admin panel</title>
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/admin_style.css' %}" />
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 1em;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f7f7f7;
+        }
+
+        button, input.btn {
+            float: right;
+            margin-right: 0em;
+            padding: .2em .6em;
+            font-size: 1em;
+            border: 0px;
+            background-color: #fc7426;
+            color: white;
+            margin-bottom: 2em;
+        }
+
+        input.btn {
+            background-color: #2153f7;
+            margin-top: 2em;
+        }
+
+        button:hover, input.btn:hover {
+            background-color: #940909;
+        }
+
+        input.button {
+            float: right;
+            margin-right: 0em;
+            padding: .2em .6em;
+            font-size: 1em;
+            border: 0px;
+            background-color: red;
+            color: white;
+        }
+
+        input.button:hover {
+            background-color: rgb(248, 189, 27);
+        }
+
+        .divider {
+            height: 7em;
+        }
+
+        section h2 {
+            padding-bottom: 1em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section id="sidebar">
+        <div class="sidebar-brand">
+            <img src="{% static 'img/sritlogo.png' %}" width="70" height="70">
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li><a href="{% url 'dashboard' %}"><span> Home</a></li>
+                <li><a href="{% url 'marks' %}"><span> Marks</a></li>
+                <li><a href="{% url 'activities' %}"><span> Activities</a></li>
+                <li><a href=""><span> Progress</a>
+                    <ul>
+                        <li><a href="{% url 'subjectWise' %}"><span> Subject Wise</a></li>
+                        <li><a href="{% url 'overall' %}"><span> Overall</a></li>
+                    </ul>
+
+                </li>
+                <li><a href="{% url 'report' %}"><span> Report</a></li>
+                <li><a href="{% url 'suggestion' %}"><span> Suggestions</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="main-content">
+        <header class="main-header">
+            <div class="header-left">
+                <h2> Welcome Admin</h2>
+            </div>
+            <div class="header-left">
+            </div>
+            <div class="header-left">
+                <img src="{% static 'img/user.png' %}" class="img-responsive">
+                <h2>SRIT</h2>
+                <p>Admin</p>
+            </div>
+            <div class="clear"></div>
+        </header>
+    </section>
+
+    <section style="padding: 10em;padding-left: 30em;">
+        <h2>Academic Activities:</h2>
+        <span style="float: right;"> <button onclick="addRow('academic')"> Add </button> </span>
+        <table class="academic" id="academic">
+            <tr>
+                <td style="background-color: #7b43ff; color:white;">
+                    <b> SUBJECT </b>
+                </td>
+                <td style="background-color: #7b43ff;color:white;">
+                    <b>Date and Time</b>
+                </td>
+                <td style="background-color: #7b43ff;color:white;">
+                    <b>Link</b>
+                </td>
+                <td style="background-color: #7b43ff;color:white;">
+                    <b>Delete</b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Subject 1
+                </td>
+                <td>
+
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    <input type="button" value="Delete" onclick="deleteRow(this, 'academic')" class="button">
+                </td>
+            </tr>
+        </table>
+         <br>
+        <div class="divider"></div>
+        <h2>Extra-Curricular Activities:</h2>
+        <span style="float: right;"> <button onclick="addRow('extra-curricular')"> Add </button> </span>
+        <table class="extra-curricular" id="extra-curricular">
+            <tr>
+                <td style="background-color: #7b43ff; color:white;">
+                    <b> SUBJECT </b>
+                </td>
+                <td style="background-color: #7b43ff;color:white;">
+                    <b>Date and Time</b>
+                </td>
+                <td style="background-color: #7b43ff;color:white;">
+                    <b>Link</b>
+                </td>
+                <td style="background-color: #7b43ff;color:white;">
+                    <b>Delete</b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Subject 1
+                </td>
+                <td>
+
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    <input type="button" value="Delete" onclick="deleteRow(this, 'extra-curricular')" class="button">
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Save" class="btn">
+    </section>
+
+    <script>
+        function addRow(id) {
+            var table = document.getElementById(id);
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            cell1.innerHTML = 'Subject';
+            cell4.innerHTML = `<input type="button" value="Delete" onclick="deleteRow(this, \'${id}\')" class="button">`;
+        }
+        function deleteRow(r, id) {
+            var i = r.parentNode.parentNode.rowIndex;
+            document.getElementById(id).deleteRow(i);
+        }
+    </script>
+
+</body>
+
+</html>
