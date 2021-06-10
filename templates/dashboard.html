@@ -10,6 +10,14 @@
   <title>Admin panel</title>
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
   <link type="text/css" rel="stylesheet" href="{% static 'css/admin_style.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/owl.theme.default.min.css' %}"
+    />
   <style>
     table {
       font-family: arial, sans-serif;
@@ -72,14 +80,19 @@
       <div class="header-left">
         <h2> Welcome Admin</h2>
       </div>
-      <div class="header-left">
-      </div>
+      
       <div class="header-left">
         <img src="{% static 'img/user.png' %}" class="img-responsive">
         <h2>SRIT</h2>
         <p>Admin</p>
       </div>
-      <div class="clear"></div>
+      <div class="header-left">
+        <button class="btn btn-primary">
+            Log Out
+        </button>
+    </div>
+      
+      
     </header>
   </section>
 
@@ -116,6 +129,14 @@
       <input type="submit" value="Save" class="button">
     </form>
   </section>
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.sticky.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/wow.min.js' %}"></script>
+  <script src="{% static 'js/smoothscroll.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
 </body>
 
 </html>
