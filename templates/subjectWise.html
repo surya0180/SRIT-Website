@@ -8,56 +8,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static 'img/sritlogo.png' %}" type="image/x-icon">
     <title>Admin panel</title>
-    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-    <link type="text/css" rel="stylesheet" href="{% static 'css/admin_style.css' %}" />
-
+    <script
+    src="https://kit.fontawesome.com/64d58efce2.js"
+    crossorigin="anonymous"
+   ></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/admin_style.css' %}"/>
+       <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    
 </head>
+
+<body>
+ <section id="sidebar">
+    <div class="sidebar-brand">
+        <img src="{% static 'img/sritlogo.png' %}" width="70" height="70">
+    </div>
+    <div class="sidebar-menu">
+        <ul>
+            <li><a href="{% url 'dashboard' %}"><span> Home</a></li>
+            <li><a href="{% url 'marks' %}"><span> Marks</a></li> 
+             <li><a href=""><span> Progress</a>
+                <ul>
+                    <li><a href="{% url 'subjectWise' %}"><span> Subject Wise</a></li>
+            <li><a href="{% url 'overall' %}"><span> Overall</a></li>
+                </ul>
+
+             </li>
+            <li><a href="{% url 'report' %}"><span> Report</a></li>
+            <li><a href="{% url 'suggestion' %}"><span> Suggestions</a></li>    
+        </ul>
+    </div>
+ </section>
 
 <body>
     <section id="sidebar">
         <div class="sidebar-brand">
             <img src="{% static 'img/sritlogo.png' %}" width="70" height="70">
         </div>
-        <div class="sidebar-menu">
-            <ul>
-                <li><a href="{% url 'dashboard' %}"><span> Home</a></li>
-                <li><a href="{% url 'marks' %}"><span> Marks</a></li>
-                <li><a href="{% url 'activities' %}"><span> Activities</a></li>
-                <li><a href=""><span> Progress</a>
-                    <ul>
-                        <li><a href="{% url 'subjectWise' %}"><span> Subject Wise</a></li>
-                        <li><a href="{% url 'overall' %}"><span> Overall</a></li>
-                    </ul>
-
-                </li>
-                <li><a href="{% url 'report' %}"><span> Report</a></li>
-                <li><a href="{% url 'suggestion' %}"><span> Suggestions</a></li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="main-content">
-        <header class="main-header">
-            <div class="header-left">
-                <h2> Welcome Admin</h2>
-            </div>
-            <div class="header-left">
-            </div>
-            <div class="header-left">
-                <img src="{% static 'img/user.png' %}" class="img-responsive">
-                <h2>SRIT</h2>
-                <p>Admin</p>
-            </div>
-            <div class="clear"></div>
-        </header>
-    </section>
-
+        <div class="header-left">
+            <img src="{% static 'img/user.png' %}" class="img-responsive">
+            <h2>SRIT</h2>
+            <p>Admin</p>
+        </div>          
+        <div class="clear"></div>
+   </header>
+ </section>
+    
     <section style="padding: 20em;padding-left: 40em;">
-        <h4 style="color: gray;">Data will be updated soon</h4>
+        
+       
+
+        <img style="width: 600px; height: 400px;" src="../../media/sale_purchase_peichart.png" />
+        
+            
+
+
+
+         
     </section>
 
 
-
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/authentication.js' %}"></script>
 </body>
 
 </html>
