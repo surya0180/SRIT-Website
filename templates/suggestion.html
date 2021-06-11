@@ -10,6 +10,10 @@
     <title>Admin panel</title>
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="{% static 'css/admin_style.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" /> -->
 
 </head>
 
@@ -20,18 +24,18 @@
         </div>
         <div class="sidebar-menu">
             <ul>
-                <li><a href="{% url 'dashboard' %}"><span> Home</a></li>
-                <li><a href="{% url 'marks' %}"><span> Marks</a></li>
-                <li><a href="{% url 'activities' %}"><span> Activities</a></li>
-                <li><a href=""><span> Progress</a>
+                <li><a style="text-decoration: none;" href="{% url 'dashboard' %}"><span> Home</a></li>
+                <li><a style="text-decoration: none;" href="{% url 'marks' %}"><span> Marks</a></li>
+                <li><a style="text-decoration: none;" href="{% url 'activities' %}"><span> Activities</a></li>
+                <li><a style="text-decoration: none;" href=""><span> Progress</a>
                     <ul>
-                        <li><a href="{% url 'subjectWise' %}"><span> Subject Wise</a></li>
-                        <li><a href="{% url 'overall' %}"><span> Overall</a></li>
+                        <li><a style="text-decoration: none;" href="{% url 'subjectWise' %}"><span> Subject Wise</a></li>
+                        <li><a style="text-decoration: none;" href="{% url 'overall' %}"><span> Overall</a></li>
                     </ul>
 
                 </li>
-                <li><a href="{% url 'report' %}"><span> Report</a></li>
-                <li style="background-color:darkblue;"  ><a href="{% url 'suggestion' %}"><span> Suggestions</a></li>
+                <li><a style="text-decoration: none;" href="{% url 'report' %}"><span> Report</a></li>
+                <li style="background-color:darkblue;"  ><a style="text-decoration: none;" href="{% url 'suggestion' %}"><span> Suggestions</a></li>
             </ul>
         </div>
     </section>
@@ -52,12 +56,23 @@
         </header>
     </section>
 
-    <section style="padding: 20em;padding-left: 40em;">
-        <h4 style="color: gray;">Data will be updated soon</h4>
+    <section style="background-color:aquamarine; padding: 23em;padding-left: 40em;">
+       <div style="padding-left:8em ;" class="container">
+        <h1 class="h1">
+            Never Give Up
+        </h1>
+       </div>
     </section>
 
 
-
-</body>
+     <!-- <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body> -->
 
 </html>
