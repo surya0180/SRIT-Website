@@ -13,25 +13,24 @@
 
 </head>
 
-<body>
-    <section id="sidebar">
+<section id="sidebar">
         <div class="sidebar-brand">
             <a href="{% url 'index' %}"><img src="{% static 'img/sritlogo.png' %}" width="70" height="70"></a>
         </div>
         <div class="sidebar-menu">
             <ul>
-                <li><a href="{% url 'dashboard' %}"><span> Home</a></li>
-                <li><a href="{% url 'marks' %}"><span> Marks</a></li>
-                <li><a href="{% url 'activities' %}"><span> Activities</a></li>
-                <li><a href=""><span> Progress</a>
+                <li><a style="text-decoration: none;" href="{% url 'dashboard' %}"><span> Home</a></li>
+                <li><a style="text-decoration: none;" href="{% url 'marks' %}"><span> Marks</a></li>
+                <li><a style="text-decoration: none;" href="{% url 'activities' %}"><span> Activities</a></li>
+                <li><a style="text-decoration: none;" href=""><span> Progress</a>
                     <ul>
-                        <li><a href="{% url 'subjectWise' %}"><span> Subject Wise</a></li>
-                        <li style="background-color:darkblue;"  ><a href="{% url 'overall' %}"><span> Overall</a></li>
+                        <li><a style="text-decoration: none;" href="{% url 'subjectWise' %}"><span> Subject Wise</a></li>
+                        <li style="background-color:darkblue;" ><a style="text-decoration: none;" href="{% url 'overall' %}"><span> Overall</a></li>
                     </ul>
 
                 </li>
-                <li><a href="{% url 'report' %}"><span> Report</a></li>
-                <li><a href="{% url 'suggestion' %}"><span> Suggestions</a></li>
+                <li><a style="text-decoration: none;" href="{% url 'report' %}"><span> Report</a></li>
+                <li  ><a style="text-decoration: none;" href="{% url 'suggestion' %}"><span> Suggestions</a></li>
             </ul>
         </div>
     </section>
@@ -52,11 +51,11 @@
         </header>
     </section>
 
-    <section style="padding-left: 30em;padding-top:10em;padding-bottom:7em; background-color:blanchedalmond;">
-        <h1 style="padding-bottom: 1em;padding-left: 8em;"  class="h1">
+    <section style="padding-left: 25em;padding-top:8em;padding-bottom:5em; background-color:blanchedalmond;">
+        <h1 style="padding-bottom: 1em;padding-left: 14em;"  class="h1">
             Overall Progress
         </h1>
-        <img src="{% static 'img/Picture1.png' %}" class="img-responsive">
+        <img style="height: fit-content; width:fix-content;" src="../../media/overall_barchart.png" class="img-responsive">
     </section>
 
 

@@ -10,14 +10,33 @@
     <title>Admin panel</title>
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="{% static 'css/admin_style.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" /> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" />
     <link
       rel="stylesheet"
       href="{% static 'css/owl.theme.default.min.css' %}"
-    />
+    /> -->
+    <style>
+        ol {
+            background: #ff9999;
+            padding: 20px;
+        }
+        #list span{
+            color:blue;
+        }
+        #list li{
+            
+            margin-top: 25px;
+        }
+
+        ol li {
+            background: #ffe5e5;
+            padding: 5px;
+            margin-left: 35px;
+        }
+    </style>
 
 </head>
 
@@ -28,18 +47,20 @@
         </div>
         <div class="sidebar-menu">
             <ul>
-                <li><a href="{% url 'dashboard' %}"><span> Home</a></li>
-                <li><a href="{% url 'marks' %}"><span> Marks</a></li>
-                <li><a href="{% url 'activities' %}"><span> Activities</a></li>
-                <li><a href=""><span> Progress</a>
+                <li><a style="text-decoration: none;" href="{% url 'dashboard' %}"><span> Home</a></li>
+                <li><a style="text-decoration: none;" href="{% url 'marks' %}"><span> Marks</a></li>
+                <li><a style="text-decoration: none;" href="{% url 'activities' %}"><span> Activities</a></li>
+                <li><a style="text-decoration: none;" href=""><span> Progress</a>
                     <ul>
-                        <li><a href="{% url 'subjectWise' %}"><span> Subject Wise</a></li>
-                        <li><a href="{% url 'overall' %}"><span> Overall</a></li>
+                        <li><a style="text-decoration: none;" href="{% url 'subjectWise' %}"><span> Subject Wise</a>
+                        </li>
+                        <li><a style="text-decoration: none;" href="{% url 'overall' %}"><span> Overall</a></li>
                     </ul>
 
                 </li>
-                <li style="background-color:darkblue;"  ><a href="{% url 'report' %}"><span> Report</a></li>
-                <li><a href="{% url 'suggestion' %}"><span> Suggestions</a></li>
+                <li style="background-color:darkblue;"><a style="text-decoration: none;"
+                        href="{% url 'report' %}"><span> Report</a></li>
+                <li><a style="text-decoration: none;" href="{% url 'suggestion' %}"><span> Suggestions</a></li>
             </ul>
         </div>
     </section>
@@ -56,54 +77,57 @@
                 <h2>SRIT</h2>
                 <p>{{user.username}}</p>
             </div>
-            
-            
+            <div class="clear"></div>
         </header>
     </section>
 
-    <section style="padding-left: 35em;padding-top:12em;padding-bottom:7em;background-color:cornsilk">
+    <section style="padding-left: 35em;padding-top:12em;padding-bottom:7em;background-color:cyan">
         <h2 class="h2">
             Report
         </h2>
-        <h4  style="color: gray;">
-            <ul style="width:70%;" class="list-group list-group-flush">
-                <li class="list-group-item list-group-item-action list-group-item-success">Subjects that you are good at:  Subject
+        <h4 style="color: gray;">
+            <ol id="list" style="width:70%;" class="list-group list-group-flush">
+                <li>Subjects that you are good
+                    at: <span> Subject </span>
                 </li>
-                <li class="list-group-item list-group-item-action list-group-item-dark">Subjects that you need to focus more on: Subject
+                <li>Subjects that you need to focus
+                    more on: <span> Subject </span>
                 </li>
-                <li class="list-group-item list-group-item-action list-group-item-success">Areas of Strength: Subject
+                <li>Areas of Strength: <span class="text"> Subject </span>
                 </li>
-                <li class="list-group-item list-group-item-action list-group-item-dark">Areas of Weakness:  Subject
+                <li>Areas of Weakness: <span> Subject </span>
                 </li>
-                <li class="list-group-item list-group-item-action list-group-item-success">Areas of Interest as observed: Subject
+                <li>Areas of Interest as
+                    observed: <span> Subject </span>
                 </li>
-                <li class="list-group-item list-group-item-action list-group-item-dark">Maximum progress shown in:  Subject
- 
-                </li>
-                <li class="list-group-item list-group-item-action list-group-item-success">Progress required in: Subject
+                <li>Maximum progress shown in:
+                    <span> Subject </span>
 
- 
                 </li>
-                <li class="list-group-item list-group-item-action list-group-item-dark">Performance deceased in:  Subject
+                <li>Progress required in: <span> Subject </span>
 
- 
+
                 </li>
-                
-                
+                <li>Performance deceased in: <span> Subject </span>
 
-              </ul>
+
+                </li>
+
+
+
+            </ol>
         </h4>
     </section>
 
 
-    <script src="{% static 'js/jquery.js' %}"></script>
+    <!-- <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/jquery.sticky.js' %}"></script>
-    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
-    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script> -->
+    <!-- <script src="{% static 'js/wow.min.js' %}"></script>
     <script src="{% static 'js/smoothscroll.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
-</body>
+</body> -->
 
 </html>
