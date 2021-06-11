@@ -31,7 +31,7 @@ def subjectWise(request):
     # Equal aspect ratio ensures that pie is drawn as a circle.
     ax1.axis('equal')
     plt.title("Pie chart of Subject")
-    plt.savefig('media/sale_purchase_peichart.png', dpi=100)
+    plt.savefig('media/subjectwise_peichart.png', dpi=100)
     plt.close()
 
     return render(request, 'subjectWise.html')
