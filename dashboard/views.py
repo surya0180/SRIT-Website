@@ -116,6 +116,12 @@ def marks(request):
             'm2': m2,
             'e': e,
         }
+        mid1avg = (int(marks['s1m1']) + int(marks['s2m1']) + int(marks['s3m1']) + int(marks['s4m1']) + int(marks['s5m1']) + int(marks['s6m1']))/6
+        mid2avg = (int(marks['s1m2']) + int(marks['s2m2']) + int(marks['s3m2']) + int(marks['s4m2']) + int(marks['s5m2']) + int(marks['s6m2']))/6
+        extavg = (E1 + E2 + E3 + E4 + E5 + E6)/6
+        total = mid1avg+mid2avg+extavg
+
+        Home.objects.all().filter(Rollnumber=rollnum).update(YourPercentage_predicted=total, OverallPercentage_predicted=total)
         return render(request, 'marks.html', context)
     else:
         student = Student.objects.all().filter(Username=request.user.username).get()
