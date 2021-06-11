@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Student
 from django.contrib.auth.models import User
 from django.contrib import auth
+from dashboard.models import *
 
 # Create your views here.
 
@@ -19,11 +20,16 @@ def login(request):
         
         if user is not None:
             auth.login(request, user)
-            return redirect('index')
+            return redirect('dashboard')
         else:
             return render(request, 'login.html', {"error": "wrong credentials"})
     
     return render(request, 'login.html')
+
+def logout(request):
+    auth.logout(request)
+    # messages.success(request, "Signed out successfully")
+    return redirect('login')
 
 def signup(request):
     if request.method == 'POST':
@@ -41,7 +47,11 @@ def signup(request):
         user.save()
 
         Student.objects.all().create(Username=username, RollNumber=rollnumber)
-        
-        return redirect('index')
+        Home.objects.all().create(Rollnumber=rollnumber)
+        Mid_1.objects.all().create(Rollnumber=rollnumber)
+        Mid_2.objects.all().create(Rollnumber=rollnumber)
+        External.objects.all().create(Rollnumber=rollnumber)
+
+        return redirect('login')
 
     return render(request, 'signup.html')

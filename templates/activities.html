@@ -98,7 +98,7 @@
     <section id="main-content">
         <header class="main-header">
             <div class="header-left">
-                <h2> Welcome Admin</h2>
+                <h2> Welcome {{user.username}}</h2>
             </div>
             <div class="header-left">
                 
@@ -106,15 +106,14 @@
             <div class="header-left">
                 <img src="{% static 'img/user.png' %}" class="img-responsive">
                 <h2>SRIT</h2>
-                <p>Admin</p>
+                <p>{{user.username}}</p>
             </div>
-            
+            <!-- <div class="clear"></div> -->
         </header>
     </section>
 
     <section style="padding: 10em;padding-left: 30em;">
         <h2>Academic Activities:</h2>
-        <span style="float: right;"> <button onclick="addRow('academic')"> Add </button> </span>
         <table class="academic" id="academic">
             <tr>
                 <td style="background-color: #7b43ff; color:white;">
@@ -126,9 +125,6 @@
                 <td style="background-color: #7b43ff;color:white;">
                     <b>Link</b>
                 </td>
-                <td style="background-color: #7b43ff;color:white;">
-                    <b>Delete</b>
-                </td>
             </tr>
             <tr>
                 <td>
@@ -139,9 +135,6 @@
                 </td>
                 <td>
 
-                </td>
-                <td>
-                    <input type="button" value="Delete" onclick="deleteRow(this, 'academic')" class="button">
                 </td>
             </tr>
         </table>

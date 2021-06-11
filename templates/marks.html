@@ -71,21 +71,21 @@
     <section id="main-content">
         <header class="main-header">
             <div class="header-left">
-                <h2> Welcome Admin</h2>
+                <h2> Welcome {{user.username}}</h2>
             </div>
             <div class="header-left">
             </div>
             <div class="header-left">
                 <img src="{% static 'img/user.png' %}" class="img-responsive">
                 <h2>SRIT</h2>
-                <p>Admin</p>
+                <p>{{user.username}}</p>
             </div>
             <div class="clear"></div>
         </header>
     </section>
 
     <section style="padding: 9em; margin-left:20em;">
-        <form action="{% url 'dashboard' %}" method="post">
+        <form action="{% url 'marks' %}" method="post">
             {% csrf_token %}
             <table>
                 <tr>
@@ -108,15 +108,14 @@
                     </td>
                     <td>
                         <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
-                            name="sti" value="24">
+                            name="s1m1" value="{{m1.S1}}">
                     </td>
                     <td>
                         <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
-                            name="sti" value="25">
+                            name="s1m2" value="{{m2.S1}}">
                     </td>
                     <td>
-                        <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
-                            name="sti" value="-">
+                        <span style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;">{{e.S1}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -124,16 +123,15 @@
                         Subject 2
                     </td>
                     <td>
-                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
-                            value="25">
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="s2m1"
+                            value="{{m1.S2}}">
                     </td>
                     <td>
-                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
-                            value="22">
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="s2m2"
+                            value="{{m2.S2}}">
                     </td>
                     <td>
-                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
-                            value="-">
+                        <span style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;">{{e.S2}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -142,15 +140,14 @@
                     </td>
                     <td>
                         <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
-                            name="sti" value="22">
+                            name="s3m1" value="{{m1.S3}}">
                     </td>
                     <td>
                         <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
-                            name="sti" value="21">
+                            name="s3m2" value="{{m2.S3}}">
                     </td>
                     <td>
-                        <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
-                            name="sti" value="-">
+                        <span style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;">{{e.S3}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -158,16 +155,15 @@
                         Subject 4
                     </td>
                     <td>
-                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
-                            value="21">
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="s4m1"
+                            value="{{m1.S4}}">
                     </td>
                     <td>
-                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
-                            value="26">
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="s4m2"
+                            value="{{m2.S4}}">
                     </td>
                     <td>
-                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
-                            value="-">
+                        <span style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;">{{e.S4}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -176,15 +172,14 @@
                     </td>
                     <td>
                         <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
-                            name="sti" value="26">
+                            name="s5m1" value="{{m1.S5}}">
                     </td>
                     <td>
                         <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
-                            name="sti" value="19">
+                            name="s5m2" value="{{m2.S5}}">
                     </td>
                     <td>
-                        <input type="text" style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;"
-                            name="sti" value="-">
+                        <span style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;">{{e.S5}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -192,16 +187,15 @@
                         Subject 6
                     </td>
                     <td>
-                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
-                            value="19">
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="s6m1"
+                            value="{{m1.S6}}">
                     </td>
                     <td>
-                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
-                            value="24">
+                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="s6m2"
+                            value="{{m2.S6}}">
                     </td>
                     <td>
-                        <input type="text" style="border:0px;background-color:white;font-size:1em;width:2em;" name="sti"
-                            value="-">
+                        <span style="border:0px;background-color:#f7f7f7;font-size:1em;width:2em;">{{e.S6}}</span>
                     </td>
                 </tr>
             </table>
