@@ -1,12 +1,12 @@
+from authpage.models import Student
+from .models import Home, Mid_1, Mid_2, External
+from django.core.files.storage import FileSystemStorage
+import numpy as np
 from matplotlib import pyplot as plt
 from django.shortcuts import render
 import random
 import matplotlib
 matplotlib.use('Agg')
-import numpy as np
-from django.core.files.storage import FileSystemStorage
-from .models import Home, Mid_1, Mid_2, External
-from authpage.models import Student
 # Create your views here.
 
 
@@ -17,7 +17,8 @@ def dashboard(request):
         student = Student.objects.all().filter(Username=request.user.username).get()
         rollnum = student.RollNumber
 
-        Home.objects.all().filter(Rollnumber=rollnum).update(Rollnumber=rollnum, SemesterTarget=sti, OverallTarget=oti)
+        Home.objects.all().filter(Rollnumber=rollnum).update(
+            Rollnumber=rollnum, SemesterTarget=sti, OverallTarget=oti)
         details = Home.objects.all().filter(Rollnumber=rollnum).get()
         context = {
             'sti': details.SemesterTarget,
@@ -48,22 +49,22 @@ def marks(request):
         rollnum = student.RollNumber
 
         Mid_1.objects.all().filter(Rollnumber=rollnum).update(
-            Rollnumber=rollnum, 
-            S1=marks['s1m1'], 
-            S2=marks['s2m1'], 
-            S3=marks['s3m1'], 
-            S4=marks['s4m1'], 
-            S5=marks['s5m1'], 
+            Rollnumber=rollnum,
+            S1=marks['s1m1'],
+            S2=marks['s2m1'],
+            S3=marks['s3m1'],
+            S4=marks['s4m1'],
+            S5=marks['s5m1'],
             S6=marks['s6m1']
         )
 
         Mid_2.objects.all().filter(Rollnumber=rollnum).update(
-            Rollnumber=rollnum, 
-            S1=marks['s1m2'], 
-            S2=marks['s2m2'], 
-            S3=marks['s3m2'], 
-            S4=marks['s4m2'], 
-            S5=marks['s5m2'], 
+            Rollnumber=rollnum,
+            S1=marks['s1m2'],
+            S2=marks['s2m2'],
+            S3=marks['s3m2'],
+            S4=marks['s4m2'],
+            S5=marks['s5m2'],
             S6=marks['s6m2']
         )
 
@@ -109,7 +110,7 @@ def marks(request):
 
         m1 = Mid_1.objects.filter(Rollnumber=rollnum).get()
         m2 = Mid_2.objects.filter(Rollnumber=rollnum).get()
-        e  = External.objects.filter(Rollnumber=rollnum).get()
+        e = External.objects.filter(Rollnumber=rollnum).get()
 
         context = {
             'm1': m1,
@@ -128,7 +129,7 @@ def marks(request):
         rollnum = student.RollNumber
         m1 = Mid_1.objects.filter(Rollnumber=rollnum).get()
         m2 = Mid_2.objects.filter(Rollnumber=rollnum).get()
-        e  = External.objects.filter(Rollnumber=rollnum).get()
+        e = External.objects.filter(Rollnumber=rollnum).get()
         context = {
             'm1': m1,
             'm2': m2,
@@ -142,25 +143,103 @@ def activities(request):
 
 
 def subjectWise(request):
+
+    student = Student.objects.all().filter(Username=request.user.username).get()
+    rollnum = student.RollNumber
+    m1 = Mid_1.objects.filter(Rollnumber=rollnum).get()
+    m2 = Mid_2.objects.filter(Rollnumber=rollnum).get()
+
+    # pie chart 1
     labels = 'mid-1', 'mid-2', 'quiz', 'other activities'
-    sizes = [random.randint(10, 30), random.randint(
-        30, 50), random.randint(30, 50), random.randint(30, 50)]
-    explode = (0.05, 0, 0.05, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+    sizes = [m1.S1, m2.S1, random.randint(10, 20), random.randint(10, 20)]
+    # only "explode" the 2nd slice (i.e. 'Hogs')
+    explode = (0.1, 0.1, 0.1, 0.1)
     fig1, ax1 = plt.subplots()
     ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
             shadow=True, startangle=90)
     # Equal aspect ratio ensures that pie is drawn as a circle.
     ax1.axis('equal')
-    plt.title("Pie chart of Subject")
-    plt.savefig('media/subjectwise_peichart.png', dpi=100)
+    plt.title("Pie chart of Subject 1")
+    plt.savefig('media/subjectwise_peichart1.png', dpi=100)
+    plt.close()
+    # pie chart 2
+    labels = 'mid-1', 'mid-2', 'quiz', 'other activities'
+    sizes = [m1.S2, m2.S2, random.randint(10, 20), random.randint(10, 20)]
+
+    fig2, ax2 = plt.subplots()
+    ax2.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+            shadow=True, startangle=90)
+    # Equal aspect ratio ensures that pie is drawn as a circle.
+    ax2.axis('equal')
+    plt.title("Pie chart of Subject 2")
+    plt.savefig('media/subjectwise_peichart2.png', dpi=100)
+    plt.close()
+    # pie chart 3
+    labels = 'mid-1', 'mid-2', 'quiz', 'other activities'
+    sizes = [m1.S3, m2.S3, random.randint(10, 20), random.randint(10, 20)]
+
+    fig3, ax3 = plt.subplots()
+    ax3.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+            shadow=True, startangle=90)
+    # Equal aspect ratio ensures that pie is drawn as a circle.
+    ax3.axis('equal')
+    plt.title("Pie chart of Subject 3")
+    plt.savefig('media/subjectwise_peichart3.png', dpi=100)
+    plt.close()
+    # pie chart 4
+    labels = 'mid-1', 'mid-2', 'quiz', 'other activities'
+    sizes = [m1.S4, m2.S4, random.randint(10, 20), random.randint(10, 20)]
+
+    fig4, ax4 = plt.subplots()
+    ax4.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+            shadow=True, startangle=90)
+    # Equal aspect ratio ensures that pie is drawn as a circle.
+    ax4.axis('equal')
+    plt.title("Pie chart of Subject 4")
+    plt.savefig('media/subjectwise_peichart4.png', dpi=100)
+    plt.close()
+    # pie chart 5
+    labels = 'mid-1', 'mid-2', 'quiz', 'other activities'
+    sizes = [m1.S5, m2.S5, random.randint(10, 20), random.randint(10, 20)]
+
+    fig5, ax5 = plt.subplots()
+    ax5.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+            shadow=True, startangle=90)
+    # Equal aspect ratio ensures that pie is drawn as a circle.
+    ax5.axis('equal')
+    plt.title("Pie chart of Subject 5")
+    plt.savefig('media/subjectwise_peichart5.png', dpi=100)
+    plt.close()
+    # pie chart 6
+    labels = 'mid-1', 'mid-2', 'quiz', 'other activities'
+    sizes = [m1.S6, m2.S6, random.randint(10, 20), random.randint(10, 20)]
+
+    fig6, ax6 = plt.subplots()
+    ax6.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+            shadow=True, startangle=90)
+    # Equal aspect ratio ensures that pie is drawn as a circle.
+    ax6.axis('equal')
+    plt.title("Pie chart of Subject 6")
+    plt.savefig('media/subjectwise_peichart6.png', dpi=100)
     plt.close()
 
     return render(request, 'subjectWise.html')
 
 
 def overall(request):
-    data = {'subject1': 65, 'subject2': 70,
-            'subject3': 85, 'subject4': 56, 'subject5': 74, 'subject6': 60, }
+    student = Student.objects.all().filter(Username=request.user.username).get()
+    rollnum = student.RollNumber
+    m1 = Mid_1.objects.filter(Rollnumber=rollnum).get()
+    m2 = Mid_2.objects.filter(Rollnumber=rollnum).get()
+    subject1 = (m1.S1 + m2.S1)*100/60
+    subject2 = (m1.S2 + m2.S2)*100/60
+    subject3 = (m1.S3 + m2.S3)*100/60
+    subject5 = (m1.S5 + m2.S5)*100/60
+    subject4 = (m1.S4 + m2.S4)*100/60
+    subject6 = (m1.S6 + m2.S6)*100/60
+
+    data = {'subject1': subject1, 'subject2': subject2,
+            'subject3': subject3, 'subject4': subject4, 'subject5': subject5, 'subject6': subject6, }
 
     courses = list(data.keys())
     values = list(data.values())
