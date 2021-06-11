@@ -24,12 +24,12 @@ class ExternalAdmin(admin.ModelAdmin):
 admin.site.register( External ,ExternalAdmin)
 
 class AcademicActivitiesAdmin(admin.ModelAdmin):
-    list_display = ('Rollnumber','Subject','DateTime','Link')
+    list_display = ('Rollnumber','Subject','DateTime','Link', 'Marks')
     
 admin.site.register( AcademicActivities ,AcademicActivitiesAdmin)
 
 class ExtraCurricularActivitiesAdmin(admin.ModelAdmin):
-    list_display = ('Rollnumber','Subject','DateTime','Link')
+    list_display = ('Rollnumber','Subject','DateTime','Link', 'Marks')
     
 admin.site.register( ExtraCurricularActivities ,ExtraCurricularActivitiesAdmin)
 

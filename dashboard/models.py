@@ -54,6 +54,7 @@ class AcademicActivities(models.Model):
     Subject = models.CharField(max_length=30)
     DateTime = models.CharField(max_length=40)
     Link = models.CharField(max_length=200)
+    Marks = models.IntegerField(default=0)
 
     def __str__(self):
         return self.Rollnumber
@@ -63,6 +64,7 @@ class ExtraCurricularActivities(models.Model):
     Subject = models.CharField(max_length=30)
     DateTime = models.CharField(max_length=40)
     Link = models.CharField(max_length=200)
+    Marks = models.IntegerField(default=0)
 
     def __str__(self):
         return self.Rollnumber
